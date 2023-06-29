@@ -76,7 +76,7 @@ export default function Home() {
       const fileData = new FormData();
       fileData.append("file", file);
       await axios
-        .post("https://4b77-116-72-18-108.ngrok-free.app/upload", fileData)
+        .post("https://url-backend-lrk7.onrender.com/upload", fileData)
         .then((result) => {
           if (result?.status === 200) {
             setUrl(result?.data?.url);

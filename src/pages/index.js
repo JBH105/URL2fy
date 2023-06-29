@@ -76,7 +76,7 @@ export default function Home() {
       const fileData = new FormData();
       fileData.append("file", file);
       await axios
-        .post("https://3d6b-116-72-18-108.ngrok-free.app/upload", fileData)
+        .post("https://4b77-116-72-18-108.ngrok-free.app/upload", fileData)
         .then((result) => {
           if (result?.status === 200) {
             setUrl(result?.data?.url);
@@ -97,7 +97,7 @@ export default function Home() {
     setConvertURL(false);
     setIsDragging(false);
   }, [selectTab]);
-  
+
   const copyToClipboard = () => {
     copy(url);
     setCopyUrl(true);
@@ -136,8 +136,6 @@ export default function Home() {
                   setCopyUrl={setCopyUrl}
                 />
               </div>
-              {/* <button onClick={handleUpload}>Upload</button> */}
-
               <div
                 className={`border px-4 border-slate-300 flex flex-col items-center justify-evenly min-h-[250px] sm:min-h-[332px]  rounded-lg ${
                   isDragging ? "border-blue-500" : ""
@@ -159,7 +157,7 @@ export default function Home() {
                 {url ? (
                   <>
                     <span>Congratulations URL created successfully</span>
-                    <div className="flex text-center shadow-dark bg-white p-3 sm:p-5 z-[5] relative rounded-2xl">
+                    <div className="flex text-center shadow-dark bg-white p-3 sm:p-5 z-[5] relative rounded-2xl break-all">
                       <span>{url}</span>
                       <button className="pr-2 pl-4" onClick={copyToClipboard}>
                         {!copyurl ? <BiCopy /> : <BiSolidCopy />}

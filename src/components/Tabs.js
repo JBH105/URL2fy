@@ -63,10 +63,18 @@ const Tabs = ({ setSelectTab, setCopyUrl, setUrl }) => {
             name="tabs"
             className="block w-full bg-transparent focus:outline-none "
             defaultValue={tabs.find((tab) => tab.current)?.name}
+            onClick={(e) => {
+              const [name, accept, index] = e.target.value?.split(",");
+              setSelectedTab(index + 1);
+              setSelectTab({ name: name, accept: accept });
+              setCopyUrl(false);
+              setUrl("");
+            }}
           >
-            {tabs.map((tab) => (
-              <option key={tab.name}>{tab.name}</option>
-            ))}
+            {tabs.map((tab, index) => {
+              const newValue = `${tab.name},${tab.accept},${index}`;
+              return <option value={newValue}>{tab.name}</option>;
+            })}
           </select>
         </div>
       </div>

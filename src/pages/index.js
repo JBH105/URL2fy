@@ -98,6 +98,7 @@ export default function Home() {
     setIsDragging(false);
   }, [selectTab]);
 
+  
   const copyToClipboard = () => {
     copy(url);
     setCopyUrl(true);

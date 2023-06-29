@@ -97,7 +97,6 @@ export default function Home() {
     setConvertURL(false);
     setIsDragging(false);
   }, [selectTab]);
-
   
   const copyToClipboard = () => {
     copy(url);

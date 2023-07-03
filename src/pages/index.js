@@ -116,12 +116,12 @@ export default function Home() {
       </Head>
       <div className="py-5 min-h-screen bg-gray-700">
         <div className="max-w-5xl mx-auto py-5 px-3 ">
-          {/* <Image
-            src="/assets/icons/next.svg"
+           <Image
+            src="/assets/logo.svg"
             width={104}
             height={24}
             alt="logo"
-          /> */}
+          /> 
           <span className="block text-gray-300 text-[20px]">URL Master</span>
         </div>
         <div className="px-3 text-center max-w-5xl mx-auto">

@@ -115,13 +115,14 @@ export default function Home() {
       </Head>
       <div className="py-5 min-h-screen bg-gray-700">
         <div className="max-w-5xl mx-auto py-5 px-3 ">
-          {/* <Image
-            src="/assets/icons/next.svg"
-            width={104}
-            height={24}
+           <img
+            src="/assets/logo.png"
+           
+            className="h-[30px]"
+            // height={24}
             alt="logo"
-          /> */}
-          <span className="block text-gray-300 text-[20px]">URL Master</span>
+          /> 
+          {/* <span className="block text-gray-300 text-[20px]">URL Master</span> */}
         </div>
         <div className="px-3 text-center max-w-5xl mx-auto">
           <h1 className="mt-[30px] sm:mt-[56px] relative z-[3] text-[28px] sm:text-[32px] font-bold leading-[44px] md:text-[48px] lg:leading-[60px] text-white lg:mt-[76px] ">

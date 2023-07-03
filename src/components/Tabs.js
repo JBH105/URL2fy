@@ -63,7 +63,7 @@ const Tabs = ({ setSelectTab, setCopyUrl, setUrl }) => {
             name="tabs"
             className="block w-full bg-transparent focus:outline-none "
             defaultValue={tabs.find((tab) => tab.current)?.name}
-            onClick={(e) => {
+            onChange={(e) => {
               const [name, accept, index] = e.target.value?.split(",");
               setSelectedTab(index + 1);
               setSelectTab({ name: name, accept: accept });

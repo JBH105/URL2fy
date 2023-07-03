@@ -116,7 +116,7 @@ export default function Home() {
       <div className="py-5 min-h-screen bg-gray-700">
         <div className="max-w-5xl mx-auto py-5 px-3 ">
            <img
-            src="/assets/logo.png"
+            src="/assets/Group.svg"
            
             className="h-[30px]"
             // height={24}

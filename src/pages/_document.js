@@ -6,8 +6,8 @@ export default function Document() {
       <Head>
         {/* <meta name="theme-color" content="#000000" /> */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="URL Master" />
-        <meta property="og:image" content="/assets/logo.png" />
+        <meta property="og:title" content="URL2fy" />
+        <meta property="og:image" content="/assets/Group_smal.svg" />
         <meta
           property="og:description"
           content="Instantly convert any file type to a live URL. Effortlessly transform and share documents, images, videos, and more. Try our file-to-live-URL converter now!"

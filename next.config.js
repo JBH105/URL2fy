@@ -2,11 +2,11 @@
 require('dotenv').config()
 const nextConfig = {
   reactStrictMode: true,
-  env: {
-    BUCKETNAME:"",
-    ACCESSKEYID:"",
-    SECRETACCESSKEY:""
-  },
+  // env: {
+  //   BUCKETNAME:"",
+  //   ACCESSKEYID:"",
+  //   SECRETACCESSKEY:""
+  // },
 };
 
 module.exports = nextConfig;

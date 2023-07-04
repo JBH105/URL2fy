@@ -2,10 +2,11 @@ import AWS from "aws-sdk";
 import formidable from "formidable";
 import fs from "fs";
 import dotenv from "dotenv";
+
 dotenv.config();
 
 const accessKeyId = process.env.ACCESSKEYID;
-console.log(accessKeyId,"accessKeyId");
+console.log(accessKeyId, "accessKeyId");
 
 AWS.config.update({
   accessKeyId: process.env.ACCESSKEYID,
@@ -24,7 +25,7 @@ export const config = {
 export default async function handler(req, res) {
   const form = formidable({
     multiples: true, // Enable multipart file uploads
-    maxFileSize: 20 * 1024 * 1024, // Set a reasonable maximum file size (e.g., 10MB)
+    // maxFileSize: 20 * 1024 * 1024, // Set a reasonable maximum file size (e.g., 10MB)
   });
   form.parse(req, async (err, fields, files) => {
     if (!files) {
@@ -37,10 +38,11 @@ export default async function handler(req, res) {
         Body: fs.createReadStream(files.file[0].filepath),
       };
       const data = await s3.upload(params).promise();
-      console.log("File uploaded successfully", data);
-      res.status(200).json({ message: "File uploaded successfully" });
+      res
+        .status(200)
+        .send({ message: "URL Create successfully", url: data.Location });
+      // res.status(200).json({ message: "File uploaded successfully" });
     } catch (error) {
-      console.error("Error uploading file:", error);
       return res.status(500).json({ error: "Error uploading file to S3" });
     }
   });

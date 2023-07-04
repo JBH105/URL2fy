@@ -13,26 +13,26 @@ const tabs = [
     current: false,
     accept: "application/msword",
   },
-  // {
-  //   name: "DOCX To URL",
-  //   href: "#",
-  //   current: true,
-  //   accept:
-  //     "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  // },
-  // {
-  //   name: "PPT To URL",
-  //   href: "#",
-  //   current: false,
-  //   accept: "application/vnd.ms-powerpoint",
-  // },
-  // {
-  //   name: "PPTX To URL",
-  //   href: "#",
-  //   current: false,
-  //   accept:
-  //     "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-  // },
+  {
+    name: "DOCX To URL",
+    href: "#",
+    current: true,
+    accept:
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  },
+  {
+    name: "PPT To URL",
+    href: "#",
+    current: false,
+    accept: "application/vnd.ms-powerpoint",
+  },
+  {
+    name: "PPTX To URL",
+    href: "#",
+    current: false,
+    accept:
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+  },
   {
     name: "IMAGE To URL",
     href: "#",

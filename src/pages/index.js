@@ -41,9 +41,9 @@ export default function Home() {
     async (event) => {
       event.preventDefault();
       const file = event.target.files[0];
-      const maxSize = 10 * 1024 * 1024; // 10 MB in bytes
+      const maxSize = 20 * 1024 * 1024; // 10 MB in bytes
       if (file && file.size > maxSize) {
-        alert("File size exceeds the maximum limit of 10 MB.");
+        alert("File size exceeds the maximum limit of 20 MB.");
         event.target.file = null;
         return;
       }
@@ -76,7 +76,8 @@ export default function Home() {
       const fileData = new FormData();
       fileData.append("file", file);
       await axios
-        .post("https://url-backend-lrk7.onrender.com/upload", fileData)
+        // .post("https://url-backend-lrk7.onrender.com/upload", fileData)
+        .post("/api/upload", fileData)
         .then((result) => {
           if (result?.status === 200) {
             setUrl(result?.data?.url);
@@ -115,13 +116,12 @@ export default function Home() {
       </Head>
       <div className="py-5 min-h-screen bg-gray-700">
         <div className="max-w-5xl mx-auto py-5 px-3 ">
-           <img
+          <img
             src="/assets/Group.svg"
-           
             className="h-[30px]"
             // height={24}
             alt="logo"
-          /> 
+          />
           {/* <span className="block text-gray-300 text-[20px]">URL Master</span> */}
         </div>
         <div className="px-3 text-center max-w-5xl mx-auto">

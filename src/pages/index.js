@@ -88,7 +88,7 @@ export default function Home() {
         })
         .catch((error) => {
           alert(error.message);
-          window.location.reload();
+          // window.location.reload();
         });
     }
   };

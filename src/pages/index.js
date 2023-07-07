@@ -42,11 +42,11 @@ export default function Home() {
       event.preventDefault();
       const file = event.target.files[0];
       const maxSize = 20 * 1024 * 1024; // 10 MB in bytes
-      if (file && file.size > maxSize) {
-        alert("File size exceeds the maximum limit of 20 MB.");
-        event.target.file = null;
-        return;
-      }
+      // if (file && file.size > maxSize) {
+      //   alert("File size exceeds the maximum limit of 20 MB.");
+      //   event.target.file = null;
+      //   return;
+      // }
       await handleUpload();
       if (file) {
         setFile(file);
@@ -87,7 +87,8 @@ export default function Home() {
           }
         })
         .catch((error) => {
-          console.log(error.message);
+          alert(error.message);
+          // window.location.reload();
         });
     }
   };
@@ -116,13 +117,9 @@ export default function Home() {
       </Head>
       <div className="py-5 min-h-screen bg-gray-700">
         <div className="max-w-5xl mx-auto py-5 px-3 ">
-          <img
-            src="/assets/Group.svg"
-            className="h-[30px]"
-            // height={24}
-            alt="logo"
-          />
-          {/* <span className="block text-gray-300 text-[20px]">URL Master</span> */}
+          <a href="/">
+            <img src="/assets/Group.svg" className="h-[30px]" alt="logo" />
+          </a>
         </div>
         <div className="px-3 text-center max-w-5xl mx-auto">
           <h1 className="mt-[30px] sm:mt-[56px] relative z-[3] text-[28px] sm:text-[32px] font-bold leading-[44px] md:text-[48px] lg:leading-[60px] text-white lg:mt-[76px] ">
@@ -173,22 +170,18 @@ export default function Home() {
                           Dropped file: <strong>{file?.name}</strong>
                         </p>
                         {convertURL && (
-                          <button
-                            className="flex gap-4 bg-[#3661e3] hover:bg-[#4f79f9] transition focus:ring-2 outline-none focus:ring-[#3661e391] focus:ring-offset-2 text-white text-[14px] sm:text-[18px] rounded px-8 py-2.5"
-                            onClick={handleConvertURL}
-                          >
+                          <div>
                             {loader ? (
-                              <>
-                                please wait a moment
-                                <img
-                                  src="/assets/icons/Infinity-1s-200px.svg"
-                                  alt="loader"
-                                />
-                              </>
+                              <div className="spinner"></div>
                             ) : (
-                              "Convert to URL"
+                              <button
+                                className="flex gap-4 bg-[#3661e3] hover:bg-[#4f79f9] transition focus:ring-2 outline-none focus:ring-[#3661e391] focus:ring-offset-2 text-white text-[14px] sm:text-[18px] rounded px-8 py-2.5"
+                                onClick={handleConvertURL}
+                              >
+                                Convert to URL
+                              </button>
                             )}
-                          </button>
+                          </div>
                         )}
                       </>
                     ) : (
@@ -238,7 +231,7 @@ export default function Home() {
         </div>
         <div>
           <p className="block text-center text-gray-300 text-[14px]">
-            © 2023 URL Master
+            © 2023 URL2fy
           </p>
         </div>
       </div>

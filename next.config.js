@@ -5,8 +5,8 @@ const nextConfig = {
   reactStrictMode: true,
   env: {
     BUCKETNAME: process.env.BUCKETNAME,
-      ACCESSKEYID: process.env.ACCESSKEYID,
-      SECRETACCESSKEY: process.env.SECRETACCESSKEY 
+    ACCESSKEYID: process.env.ACCESSKEYID,
+    SECRETACCESSKEY: process.env.SECRETACCESSKEY 
   }
 };
 

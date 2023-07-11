@@ -6,7 +6,8 @@ import { BiCopy, BiSolidCopy } from "react-icons/bi";
 import GlobalContext from "@/contexts/GlobalContext";
 
 export default function FIleUpload() {
-  const { selectTab, setSelectTab } = useContext(GlobalContext);
+  const { selectTab, setSelectTab, HandleFileUpload } =
+    useContext(GlobalContext);
   const [isDragging, setIsDragging] = useState(false);
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(0);
@@ -66,26 +67,37 @@ export default function FIleUpload() {
   };
 
   const handleConvertURL = async () => {
-    if (file) {
-      setLoader(true);
-      const fileData = new FormData();
-      fileData.append("file", file);
-      await axios
-        // .post("https://url-backend-lrk7.onrender.com/upload", fileData)
-        .post("/api/upload", fileData)
-        .then((result) => {
-          if (result?.status === 200) {
-            setUrl(result?.data?.url);
-            setTimeout(() => {
-              setLoader(false);
-            }, 1000);
-          }
-        })
-        .catch((error) => {
-          alert(error.message);
-          // window.location.reload();
-        });
+    setLoader(true);
+    const data = await HandleFileUpload(file);
+    if (data.URL) {
+      setUrl(data.URL);
+      setTimeout(() => {
+        setLoader(false);
+      }, 1000);
+    } else {
+      alert(data.Error);
+      window.location.reload();
     }
+    // if (file) {
+    //   setLoader(true);
+    //   const fileData = new FormData();
+    //   fileData.append("file", file);
+    //   await axios
+    //     // .post("https://url-backend-lrk7.onrender.com/upload", fileData)
+    //     .post("/api/upload", fileData)
+    //     .then((result) => {
+    //       if (result?.status === 200) {
+    //         setUrl(result?.data?.url);
+    //         setTimeout(() => {
+    //           setLoader(false);
+    //         }, 1000);
+    //       }
+    //     })
+    //     .catch((error) => {
+    //       alert(error.message);
+    //       // window.location.reload();
+    //     });
+    // }
   };
 
   useEffect(() => {
@@ -98,11 +110,6 @@ export default function FIleUpload() {
   const copyToClipboard = () => {
     copy(url);
     setCopyUrl(true);
-    // setTimeout(() => {
-    //   setUrl('')
-    //   setCopyUrl(false)
-    //   setFile(null)
-    // }, 2000);
   };
   return (
     <div>
@@ -200,7 +207,7 @@ export default function FIleUpload() {
             )}
           </div>
         </div>
-        <div className="absolute h-[241px] w-[241px] shadow-blue left-0 top-[39px] rounded-[50%]"></div>
+        <div className="absolute h-[235px] w-[241px] shadow-blue left-0 top-[39px] rounded-[50%]"></div>
       </div>
     </div>
   );

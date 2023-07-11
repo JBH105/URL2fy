@@ -1,10 +1,11 @@
-import FIleUpload from '@/components/FIleUpload';
-import GlobalContext from '@/contexts/GlobalContext';
-import Head from 'next/head';
-import React, { useContext } from 'react'
+import FIleUpload from "@/components/FIleUpload";
+import GlobalContext from "@/contexts/GlobalContext";
+import Head from "next/head";
+import React, { useContext } from "react";
 
 export default function Pdf() {
-  const { selectTab, setSelectTab } = useContext(GlobalContext);
+  const { selectTab, setSelectTab, HandleFileUpload } =
+    useContext(GlobalContext);
   return (
     <div>
       <Head>

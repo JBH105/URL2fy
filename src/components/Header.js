@@ -53,19 +53,23 @@ const navigation = [
 
 export default function Header({ HandelSelectTab }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  console.log(
+    "🚀 ~ file: Header.js:56 ~ Header ~ mobileMenuOpen:",
+    mobileMenuOpen
+  );
   const { selectTab, setSelectTab } = useContext(GlobalContext);
   useEffect(() => {
     setSelectTab(navigation[0]);
   }, []);
 
   return (
-    <header className="bg-white sticky top-0 z-[999] shadow-dark">
+    <header className="bg-white top-0 sticky z-[999] shadow-dark">
       <nav
         className="mx-auto flex container items-center justify-between px-6 py-4 lg:py-6 lg:px-8 "
         aria-label="Global"
       >
-        <a href="#" className="-m-1.5 p-1.5">
-          <span className="sr-only">Your Company</span>
+        <a href="/" className="-m-1.5 p-1.5">
+          {/* <span className="sr-only">Your Company</span> */}
           <img className="h-8 w-auto" src="/assets/Group1.svg" alt="" />
         </a>
         <div className="flex lg:hidden">
@@ -102,6 +106,10 @@ export default function Header({ HandelSelectTab }) {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
+            <a href="/" className="-m-1.5 p-1.5">
+              {/* <span className="sr-only">Your Company</span> */}
+              <img className="h-8 w-auto" src="/assets/Group1.svg" alt="" />
+            </a>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"

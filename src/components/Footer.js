@@ -50,7 +50,7 @@ const navigation = {
       accept: "image/*",
     },
     {
-      name: "About",
+      name: "ABOUT",
       href: "/about",
       current: false,
       accept: "image/*",

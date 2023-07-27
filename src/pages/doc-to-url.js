@@ -21,7 +21,7 @@ export default function Doc() {
           </h3>
           <FIleUpload />
         </div>
-        <div className="px-3 max-w-5xl mx-auto">
+        <div className="px-3 max-w-5xl mx-auto relative">
           <p className="text-[22px] font-bold text-gray-800">Key Features:</p>
           <div className="mt-[30px]">
             <span className="text-[18px] font-bold text-gray-700">1. Quick Conversion:</span>
@@ -44,7 +44,7 @@ export default function Doc() {
             <span className='pl-[5px] text-gray-900'>Our intuitive interface makes converting DOC files to URLs a walk in the park.</span>
           </div>
 
-          <p className="text-[22px] mt-[50px] font-bold text-gray-800">How to Convert XLSX to URL:</p>
+          <p className="text-[22px] mt-[50px] font-bold text-gray-800">How to Convert DOC to URL:</p>
           <div className="mt-[30px]">
             <span className="text-[18px] font-bold text-gray-700">1. Upload:</span>
             <span className='pl-[5px] text-gray-900'>Choose the DOC file you wish to convert, or drag it onto the upload section.</span>

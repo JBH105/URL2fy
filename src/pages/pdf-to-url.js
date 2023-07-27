@@ -21,7 +21,7 @@ export default function Pdf() {
           </h3>
           <FIleUpload />
         </div>
-        <div className="px-3 max-w-5xl mx-auto">
+        <div className="px-3 max-w-5xl mx-auto relative">
           <p className="text-[22px] font-bold text-gray-800">Key Features:</p>
           <div className="mt-[30px]">
             <span className="text-[18px] font-bold text-gray-700">1. Swift Conversion:</span><span className='pl-[5px] text-gray-900'>Our advanced technology ensures speedy conversion, giving you a live URL in just a matter of seconds.</span>

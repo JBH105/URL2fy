@@ -20,7 +20,7 @@ export default function Docs() {
           </h3>
           <FIleUpload />
         </div>
-        <div className="px-3 max-w-5xl mx-auto">
+        <div className="px-3 max-w-5xl mx-auto relative">
           <p className="text-[22px] font-bold text-gray-800">Key Features:</p>
           <div className="mt-[30px]">
             <span className="text-[18px] font-bold text-gray-700">1. Rapid Conversion:</span>
